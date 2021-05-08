@@ -301,7 +301,7 @@ function start() {
 }
 
 function setCityBG() {
-    let cityURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=0c87cc862e25e5890b9092056495a1f4";
+    let cityURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&APPID=0c87cc862e25e5890b9092056495a1f4";
     fetch(cityURL)
         .then( (data) => data.json() )
         .then( function(d) {
@@ -323,7 +323,7 @@ function setCityBG() {
 }
 
 function setCoorBG() {
-    let coorURL = "http://api.openweathermap.org/data/2.5/weather?lat=" + coor.lat + "&lon=" + coor.lon + "&units=imperial&APPID=0c87cc862e25e5890b9092056495a1f4"
+    let coorURL = "https://api.openweathermap.org/data/2.5/weather?lat=" + coor.lat + "&lon=" + coor.lon + "&units=imperial&APPID=0c87cc862e25e5890b9092056495a1f4"
     fetch(coorURL)
         .then( (data) => data.json() )
         .then( function(d) {
@@ -357,7 +357,7 @@ function getWeather(url) {
         .then( (data) => data.json() )
         .then( function(w) {
             //console.log(w)
-            let icon = "http://openweathermap.org/img/w/" + w.weather[0].icon + ".png";
+            let icon = "https://openweathermap.org/img/w/" + w.weather[0].icon + ".png";
             let weather = w.weather[0].main
             let temp = Math.floor(w.main.temp);
             let city = (w.name === 'Globe') ? 'Your Location' : w.name;
