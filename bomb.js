@@ -2,7 +2,7 @@ export default class Bomb{
     
     constructor() {
         this.x = Math.random() * 710 + 10;
-        this.y = 480;
+        this.y = 470;
         this.speed = Math.random() * 3 + 1;
         this.view = document.createElement('div');
         this.centerX = this.x + 15;
