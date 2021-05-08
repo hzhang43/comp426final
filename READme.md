@@ -22,5 +22,5 @@ Fruit Catcher uses Firebase as a backend to handle user authentication and to ke
 * Music/Sound Effects
   * [OpenGameArt](https://opengameart.org/)
 * Artwork
- * All artwork is original and was created by myself  
+  * All artwork is original and was created by myself  
  
