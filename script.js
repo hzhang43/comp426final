@@ -64,6 +64,7 @@ let coor = {
 let defaultBG = "url('./img/daybg.png')"
 let isDefault = false;
 let charChose = false;
+let muteOn = false;
 
 function drawAssets() {
 
@@ -263,7 +264,7 @@ let reset = function() {
     if (isFirst) {
         return
     }
-    if (!isMuted) {
+    if (!isMuted && !muteOn) {
         song.play();
     }
     player.draw();
@@ -447,6 +448,7 @@ let mute = function() {
     if (charChose) {
         song.pause();
     }
+    muteOn = true;
     muteButton.classList.remove('is-success');
     muteButton.classList.add('is-danger');
     muteButton.innerHTML = `<img src="./img/soundoff.png" width="30" height="30"></img>`
@@ -467,6 +469,7 @@ let unmute = function() {
     if (charChose) {
         song.play();
     }
+    muteOn = false;
     muteButton.classList.remove('is-danger');
     muteButton.classList.add('is-success');
     muteButton.innerHTML = `<img src="./img/soundon.png" width="30" height="30"></img>`
