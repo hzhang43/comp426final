@@ -6,6 +6,8 @@ Play Fruit Catcher [here](https://hzhang43.github.io/comp426final/)
 ## Details
 Fruit Catcher uses your location or any city you provide in the weather app to retrieve weather information on that location and then dynamically change the background to reflect it.
 
+After you lose a game, you can generate a programming joke by clicking the button.
+
 Fruit Catcher uses Firebase as a backend to handle user authentication and to keep track of high scores and other profile elements such as light/dark modes and music on/off.
 
 ## Resources/Technologies Used
