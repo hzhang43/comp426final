@@ -241,7 +241,7 @@ function gameOver() {
                     `;
                 }
             } else {
-                html += `<p>Login to store your scores!`;
+                html += `<p>Login to store your scores!</p>`;
             }
             html += `<button class="button is-rounded is-info" id="fact-button">Click for a programming joke!</button>`
             statusView.innerHTML = html;
