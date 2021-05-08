@@ -213,11 +213,16 @@ function gameOver() {
     gameOversfx.play();
     player.invis();
     let html = ''
-    let url = '//numbersapi.com/' + score
-    fetch(url)
-        .then( (response) => (response.text()) )
+   fetch("https://v2.jokeapi.dev/joke/Programming?safe-mode&blacklistFlags=nsfw,religious,political,racist,sexist,explicit")
+        .then( (response) => response.json() )
         .then( (data) => {
-            fact.innerHTML = data;
+            if (data.type === 'single') {
+                fact.innerHTML = data.joke;
+            } else {
+                let joke = data.setup;
+                joke += `<br>${data.delivery}`;
+                fact.innerHTML = joke;
+            }
         })
         .then( () => {
             html += `<h3>Game Over!</h3>`
@@ -238,7 +243,7 @@ function gameOver() {
             } else {
                 html += `<p>Login to store your scores!</p>`;
             }
-            html += `<button class="button is-rounded is-info" id="fact-button">Click for a fun fact about your score!</button>`
+            html += `<button class="button is-rounded is-info" id="fact-button">Click for a programming joke!</button>`
             statusView.innerHTML = html;
             clear();
             window.removeEventListener('keydown', moveHandler);
