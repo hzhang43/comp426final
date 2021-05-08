@@ -1,0 +1,234 @@
+html,body {
+    text-align: center;
+    margin:0;
+    height:100%;
+}
+
+#board {
+    width: 750px;
+    height: 500px;
+    position: relative;
+    border: 3px solid black;
+    border-radius: 10px;
+    margin:auto;
+    background-size: contain;
+    text-align: center;
+    display: inline-block;
+}
+
+.fruit {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-size: contain;
+}
+
+.bomb {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-image: url('./img/bomb.png');
+    background-size: contain;
+}
+
+.player {
+    width: 50px;
+    height: 104px;
+    background-size: contain;
+    position: absolute;
+    
+}
+
+.score {
+    text-transform: uppercase;
+    padding: 5px 0px 0px 10px;
+    font-size: 30px;
+    font-family: 'VT323', monospace;
+    float: left;
+}
+
+.lives {
+    text-transform: uppercase;
+    padding: 5px 10px 0px 0px;
+    font-size: 30px;
+    font-family: 'VT323', monospace;
+    float:right;
+}
+
+.status {
+    text-transform: uppercase;
+    font-family: 'VT323', monospace;
+    font-size: 100px;
+    width: 400px;
+    color:red;
+    position: absolute;
+    right:175px;
+    padding-top: 80px;
+    text-shadow: 0 0 10px black;
+}
+
+.status p {
+    font-size: 40px;
+    margin: auto;
+    text-shadow: 0 0 5px black;
+}
+
+.overlay {
+    background-color:rgba(255, 0, 0, 0.6);
+    border-radius: 7px;
+    height: 500px;
+    width: 750px;
+}
+
+#reset {
+    margin-bottom: 10px;
+}
+
+#weather-container {
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px;
+    width: 150px;
+    margin: auto;
+    background-image: url('./img/weatherbg.jpg');
+    background-size: contain;
+}
+
+/*
+#fact-container {
+    border: 1px solid black;
+    text-align: center;
+    border-radius: 10px;
+    width: 150px;
+    height: 261px;
+    margin: auto;
+    padding: 5px;
+}
+*/
+
+#icon {
+    width: 60px;
+    height: 60px;
+}
+
+#weather {
+    font-size: 22px;
+    margin: 0;
+}
+
+#temp {
+    font-size: 60px;
+    margin: 0;
+    font-weight: bold;
+}
+
+#reset, #start {
+    display: inline-block;
+    background-color: inherit;
+    transition: color 300ms, background-color 300ms;
+    margin:auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#reset {
+    color: #e01010;
+    border: 1px solid #e01010;
+}
+  
+#reset:hover {
+    color: #ffffff;
+    background-color: #e01010;
+}
+
+#start {
+    color: #08d11c;
+    border: 1px solid #08d11c;
+}
+  
+#start:hover {
+    color: #ffffff;
+    background-color: #08d11c;
+}
+
+#search {
+    resize: horizontal;
+    width: 100px;
+}
+
+#marker {
+    height:12px;
+    width:12px;
+}
+
+.container {
+    display: flex;
+    padding-left: 250px;
+}
+
+.start-prompt {
+    font-size: 80px;
+}
+
+.modal-content {
+    text-align: left;
+    padding: 15px;
+}
+
+
+#fact {
+    text-transform: uppercase;
+    font-family: 'VT323', monospace;
+    color:#856a3c;
+    text-align: center;
+    font-size: 24px;
+}
+
+.char-select {
+    padding-top: 80px;
+}
+
+.has-addons {
+    display: inline-block;
+    padding:5px;
+}
+
+.button-container {
+    padding-left: 1670px;
+}
+
+figure img {
+    padding:5px;
+    border: 3px solid #856a3c;
+    border-radius: 8px;
+}
+
+.modal-content{
+    padding: 10px 40px 10px 40px;
+    border-radius: 10px;
+}
+
+figcaption {
+    font-size: 15px;
+}
+
+.htp-sub {
+    font-weight: bold;
+    font-size:20px;
+}
+
+.htp, .acct {
+    color:#856a3c;
+    text-align: center;
+    text-transform: capitalize;
+    font-family: 'VT323', monospace;
+    font-size: 50px;
+}
+
+#account-details {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+

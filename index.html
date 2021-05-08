@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comp426 Final</title>
+    <link rel="stylesheet" href="node_modules/bulma/css/bulma.css" />
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script src="modal.js"></script>
+</head>
+<body>
+    <!--NAV BAR-->
+    <nav>
+        <div class="tabs is-medium is-centered is-right">
+            <ul>
+                <li class="logged-in logged-out" id="rules-button" style="display: none;">
+                    <a class="tab">How to Play</a>
+                </li>
+                <li class="logged-in" id="account-button" style="display: none;">
+                    <a class="tab">Account</a>
+                </li>
+                <li class="logged-in" id="logout-button" style="display: none;">
+                    <a class="tab">Logout</a>
+                </li>
+                <li class="logged-out" id="login-button" style="display: none;">
+                    <a class="tab">Login</a>
+                </li>
+                <li class="logged-out" id="signup-button" style="display: none;">
+                    <a class="tab">Sign up</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <div class="button-container">
+        <div class="buttons has-addons">
+            <button class="button is-success" id="mute"><img src="./img/soundon.png" width="30" height="30"></button>
+        </div>
+        <div class="buttons has-addons">
+            <button class="button is-black is-selected" id="light">Light</button>
+            <button class="button is-light" id="dark">Dark</button>
+        </div>
+    </div>
+    <h1 class="title">Fruit Catcher</h1>
+    <h2 class="subtitle">Created By: Harrison Zhang</h2>
+
+
+    <!--Sign Up Modal-->
+    <div class="modal" id="signup">
+        <div class="modal-background" id="signup-bg"></div>
+        <div class="modal-content has-background-white">
+            <br>
+            <h4 class="title is-4">Sign up</h4>
+            <form id="signup-form">
+              <div class="input-field field">
+                <label class="label" for="signup-email">Email: </label>
+                <div class="control">
+                    <input class= "input" type="email" id="signup-email" required />
+                </div>
+              </div>
+              <div class="input-field field">
+                <label class="label" for="signup-password">Create password: </label>
+                <div class="control">
+                    <input class="input" type="password" id="signup-password" required />
+                </div>
+              </div>
+            <button class="button is-primary is-rounded">Sign up</button><br>
+            </form>
+        </div>
+    </div>
+
+
+    <!--Login Modal-->
+    <div class="modal" id="login">
+        <div class="modal-background" id="login-bg"></div>
+        <div class="modal-content has-background-white">
+            <br>
+            <h4 class="title is-4">Login</h4>
+            <form id="login-form">
+              <div class="input-field field">
+                <label class="label" for="login-email">Email: </label>
+                <div class="control">
+                    <input class="input" type="email" id="login-email" required />
+                </div>
+              </div>
+              <div class="input-field field">
+                <label class="label" for="login-password">Password: </label>
+                <div class="control">
+                    <input class="input" type="password" id="login-password" required />
+                </div>
+              </div>
+              <button class="button is-primary is-rounded">Login</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!--How To Play Modal-->
+    <div class="modal" id="rules">
+        <div class="modal-background" id="rules-bg"></div>
+        <div class="modal-content" style="background-color: #deceb1; color:#856a3c">
+            <br>
+            <h4 class="htp">How To Play</h4><br>
+            <div class="block">
+                <p class="htp-sub">Controls:</p>
+                <p>Move using the left and right arrow keys</p>
+                <br>
+                <figure style="text-align: center;">
+                    <img src="./img/left_right_keys.png" width="150" height="100">
+                </figure>
+                <br>
+            </div>
+            <div class="block">
+                <p class="htp-sub">Objective:</p>
+                <p>Catch as many of the falling fruits as you can! Each fruit caught will add 1 to your total score.</p>
+                <br>
+                <figure style="text-align: center;">
+                    <img src="./img/apple.png">
+                    <img src="./img/peach.png">
+                    <img src="./img/orange.png">
+                    <figcaption>
+                        <em>Fruit look like this!</em>
+                    </figcaption>
+                </figure>
+                <br>
+                <p>Be careful! Some evildoer who hates fruit is also dropping bombs! Catching a bomb will cause you to lose a life</p>
+                <br>
+                <figure style="text-align: center;">
+                    <img src="./img/bomb.png">
+                    <figcaption>
+                        <em>Bombs look like this!</em>
+                    </figcaption>
+                </figure>
+                <br>
+                <p>You only have 3 lives and if you reach 0 lives, you lose! Good luck!</p>
+                </div>
+            <br>
+        </div>
+    </div>
+
+    <!--Account Modal-->
+    <div class="modal" id="account">
+        <div class="modal-background" id="account-bg"></div>
+        <div class="modal-content" style="background-color: #deceb1; color:#856a3c">
+            <br>
+            <h4 class="acct">Account</h4>
+            <br>
+            <div id="account-details"></div>
+            <br>
+        </div>
+    </div>
+
+    <!--Fact Modal-->
+    <div class="modal" id="fact-modal">
+        <div class="modal-background" id="fact-bg"></div>
+        <div class="modal-content" style="background-color: #deceb1;">
+            <br>
+            <div id="fact"></div>
+            <br>
+        </div>
+    </div>
+
+    
+
+    <div class="block">
+        <button class="button is-outlined is-rounded" id="reset">Reset</button>
+        <button class="button is-outlined is-rounded" id="start">Start</button>
+        <!--<button class="button is-outlined is-rounded is-warning is-light" title="Disabled button" id="pause" disabled>Pause</button>-->
+    </div>
+    
+
+    <!-- GAME BOARD -->
+    <div class="container block">
+        <!--
+        <div id="fact-container">
+            <p id="fact">Play to get a fun fact about your score!</p>
+        </div>
+    -->
+        <div id="board"></div>
+        <div id="weather-container">
+            <br>
+            <form id="search-form">
+                <input id="search" placeholder="Change city...">
+            </form>
+            <img id="icon">
+            <p id="city"></p>
+            <p id="weather"></p>
+            <p id="temp"></p>
+        </div>
+    </div>
+    
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDM2QBBBwptbn7vazGvc5u9yTQH8U95ffI",
+            authDomain: "comp426final-643b3.firebaseapp.com",
+            projectId: "comp426final-643b3",
+            storageBucket: "comp426final-643b3.appspot.com",
+            messagingSenderId: "525057931515",
+            appId: "1:525057931515:web:0fef9651bfba8e8995185e",
+            measurementId: "G-N0Z22J4XTY"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+    </script>
+    <script src="auth.js" type="module"></script>
+    <script src="script.js" type="module"></script>
+    
+</body>
+</html>
+
