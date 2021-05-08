@@ -11,12 +11,10 @@ import { darkMode, lightMode, mute, unmute } from "./script.js";
 
 auth.onAuthStateChanged( async (user) => {
     if (user) {
-        //console.log('user logged in', user.uid);
         userData = user;
         await getHighScore(user);
         let docRef = db.collection('scores').doc(user.uid);
         docRef.get().then( (doc) => {
-            //console.log(doc.data())
             if (doc.exists) {
                 isDarkMode = doc.data().isDarkMode;
                 isMuted = doc.data().isMuted;
@@ -26,8 +24,6 @@ auth.onAuthStateChanged( async (user) => {
         highscore = undefined;
         userData = null;
         isDarkMode = false;
-        isMuted = false;
-        //console.log('user logged out')
         setupUI();
     }
 
@@ -111,21 +107,19 @@ let setupUI = function(user) {
         })
         loggedOut.forEach( (item) => item.style.display = 'none' );
         loggedIn.forEach( (item) => item.style.display = 'block' );
-        console.log(isMuted)
         if (isDarkMode) {
             darkMode();
         } else {
             lightMode();
         }
-        if (isMuted) {
-            mute();
-        } else {
-            unmute();
-        }
     } else {
         loggedIn.forEach( (item) => item.style.display = 'none' );
         loggedOut.forEach( (item) => item.style.display = 'block' );
-        unmute();
         lightMode();
+    }
+    if (isMuted) {
+        mute();
+    } else {
+        unmute();
     }
 }
