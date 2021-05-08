@@ -109,7 +109,7 @@ function moveFruit() {
 }
 
 function createBombs() {
-    if (gameFrame % 300 == 0) {
+    if (gameFrame % 200 == 0) {
         let bomb = new Bomb();
         bomb.draw();
         bombArr.push(bomb);
