@@ -94,17 +94,6 @@ html,body {
     background-size: contain;
 }
 
-/*
-#fact-container {
-    border: 1px solid black;
-    text-align: center;
-    border-radius: 10px;
-    width: 150px;
-    height: 261px;
-    margin: auto;
-    padding: 5px;
-}
-*/
 
 #icon {
     width: 60px;
@@ -194,7 +183,7 @@ html,body {
 }
 
 .button-container {
-    padding-left: 1670px;
+    padding-left: 83%;
 }
 
 figure img {
