@@ -535,4 +535,6 @@ window.addEventListener('load', () => {
     statusView.classList.add('status');
     board.appendChild(statusView);
     selectChar();
+    fetch("numbersapi.com/42")
+        .then( (data) => console.log(data.json()) )
 })
