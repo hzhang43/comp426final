@@ -180,7 +180,6 @@ function testBomb() {
             view.classList.remove('bomb');
             bombArr.splice(i,1);
             lives--;
-            //console.log(score);
             livesView.innerHTML = `Lives: ${lives}`;
             if (lives === 0) {
                 isGameOver = true;
@@ -213,11 +212,16 @@ function gameOver() {
     gameOversfx.play();
     player.invis();
     let html = ''
-    let url = "https://numbersapi.com/" + score;
-    fetch(url)
-        .then( (response) => response.text() )
+    fetch("https://v2.jokeapi.dev/joke/Programming?safe-mode&blacklistFlags=nsfw,religious,political,racist,sexist,explicit")
+        .then( (response) => response.json() )
         .then( (data) => {
-            fact.innerHTML = data;
+            if (data.type === 'single') {
+                fact.innerHTML = data.joke;
+            } else {
+                let joke = data.setup;
+                joke += `<br>${data.delivery}`;
+                fact.innerHTML = joke;
+            }
         })
         .then( () => {
             html += `<h3>Game Over!</h3>`
@@ -238,7 +242,7 @@ function gameOver() {
             } else {
                 html += `<p>Login to store your scores!`;
             }
-            html += `<button class="button is-rounded is-info" id="fact-button">Click for a fun fact about your score</button>`
+            html += `<button class="button is-rounded is-info" id="fact-button">Click for a programming joke!</button>`
             statusView.innerHTML = html;
             clear();
             window.removeEventListener('keydown', moveHandler);
@@ -345,7 +349,6 @@ function setCoorBG() {
 }
 
 function locationBG(position) {
-    //console.log('in locationBG')
     coor.lon = position.coords.longitude;
     coor.lat = position.coords.latitude;
     locAllow = true;
@@ -356,7 +359,6 @@ function getWeather(url) {
     fetch(url)
         .then( (data) => data.json() )
         .then( function(w) {
-            //console.log(w)
             let icon = "https://openweathermap.org/img/w/" + w.weather[0].icon + ".png";
             let weather = w.weather[0].main
             let temp = Math.floor(w.main.temp);
@@ -521,7 +523,6 @@ window.addEventListener('load', () => {
     darkButton.addEventListener('click', darkMode);
     muteButton.addEventListener('click', mute);
     search.addEventListener('submit', (e) => {
-        console.log('in search')
         e.preventDefault();
         city = search['search'].value;
         setCityBG();
