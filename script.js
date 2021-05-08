@@ -213,7 +213,7 @@ function gameOver() {
     gameOversfx.play();
     player.invis();
     let html = ''
-    let url = "http://numbersapi.com/" + score;
+    let url = "https://numbersapi.com/" + score;
     fetch(url)
         .then( (response) => response.text() )
         .then( (data) => {
